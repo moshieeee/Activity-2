@@ -74,7 +74,17 @@
                     alert("Please complete all fields.");
                     return;
                 }
+                
+                //Validation for Duplicate entries of name
+                for (let i = 0; i < students.length; i++) {
+                    if (students[i].name == name && i != editIndex) {
+                        alert("Student name already exist");
 
+                    document.getElementById("studentName").value = "";
+                        return;
+                    }
+                }
+                
                 //Validaation for Duplicate entrres of id
                 for (let i = 0; i < students.length; i++) {
                     if (students[i].studentid == studentid && i != editIndex) {
